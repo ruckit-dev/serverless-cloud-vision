@@ -2,23 +2,23 @@ service: cloudvision
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
 
 defaults:
  stage: dev
  region: us-east-1
 
+plugins:
+  - serverless-python-requirements
 package:
-  include:
-    - cloudvision
   exclude:
     - .git
 
 functions:
   cloudvision:
     name: lambda-cloudvision
-    handler: cloudvision/handler.lambda_handler
+    handler: handler.lambda_handler
     events:
       - http:
-          path: detect_image
+          path: ocr_image
           method: post
