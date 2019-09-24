@@ -22,3 +22,4 @@ functions:
       - http:
           path: ocr_image
           method: post
+          cors: true
