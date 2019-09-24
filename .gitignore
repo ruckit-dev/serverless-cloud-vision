@@ -1,5 +1,6 @@
 # Location of Python libraries
-vendored/
+.serverless/
+node_modules/
 
 # Credentials
 cloudvision/google-application-credentials.json
